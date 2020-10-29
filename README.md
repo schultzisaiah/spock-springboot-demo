@@ -32,7 +32,7 @@ The tests themselves are usually written using an explicit "given/when/then" str
 - BONUS SECTION! `where:` is used to define multiple testing scenarios to be executed by the same test code. See the "@Unroll" section below for more on that!
 
 #### Feature toggling
-I set us up for the standardized testing of feature toggles by creating the BaseSpec.groovy file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework (Togglz) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
+I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework (Togglz) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
 
 Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L109) and [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L111-L125)
 
