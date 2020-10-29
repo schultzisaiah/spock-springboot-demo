@@ -9,7 +9,7 @@ This project demonstrates some of the more simple and most-commonly-used types o
 Some particular features highlighted in this demo:
 - Testing with/out mocks in a Controller/Service/Repo architecture
 - Testing with feature toggles ([Togglz](https://www.togglz.org/), in this case)
-- Multiple test cases in the same Spec ("where" table)
+- Multiple test cases in the same test function (ie: "where" table)
 - Mocking different types of responses based on different input
 - Behavior-driven testing (Spies)
     - counting invocation
