@@ -24,8 +24,13 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew test
-    - name: Publish Unit Test Results
+    - name: Publish Unit Test Results (HTML)
       uses: actions/upload-artifact@v2
       with:
         name: HTML Test Restuls
         path: build/reports/tests/test/
+    - name: Publish Unit Test Results (XML)
+      uses: EnricoMi/publish-unit-test-result-action@v1.3
+      with:
+        github_token: ${{ secrets.MY_TOKEN }}
+        files: build/test-results/**/*.xml
