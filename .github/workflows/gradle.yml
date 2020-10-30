@@ -31,7 +31,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew test
     - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1.3
+      uses: actions/upload-artifact@v2
       with:
-        github_token: ${{ secrets.MY_TOKEN }}
-        files: test-results/**/*.xml
+        name: my-artifact
+        path: reports/tests/test/
