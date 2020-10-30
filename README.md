@@ -34,7 +34,7 @@ The tests themselves are usually written using an explicit "given/when/then" str
 #### Feature toggling
 I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework (Togglz) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
 
-Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L109) and [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L111-L125)
+Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L109) and [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L111-L125).
 
 #### Using Mock/Spy
 Well done "pure" unit tests are very well mocked out so that only the method under test is code influencing the results of the test. This allows us to create concise tests that are easy to read and maintain, clearly indicate the offending code when tests fail, and run very very fast.
@@ -52,7 +52,7 @@ then:
 1 * spyService.get(_)
 ```
 
-Make sure the `delete` method is called _first_:
+Make sure the `delete` method is called _first_ (a complete example [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L70-L96)):
 ```groovy
 when:
 serviceUnderTest.methodUnderTest()
@@ -67,7 +67,7 @@ then:
 #### @Unroll test iterations
 One of my favorite quality-of-life features offered by Spock is the ability to define a test once, and "unroll" different scenarios using the same exact test.
 
-You can see this used throughout the project. Basically test variables can be defined in the "where" clause of the test one one of two ways...
+You can see this used throughout this demo code. Basically test variables can be defined in the "where" clause of the test one one of two ways...
 
 ... a table:
 ```groovy
@@ -84,7 +84,7 @@ where:
 env << ['dev', 'qa', 'prod']
 ```
 
-Then the @Unroll annotation on the test itself will instruct Spock to run the test separately for each set of values defined. (ie: in the examples above, there are three rows in the table and three elements in the list, so Spock will perform three tests).
+Then the @Unroll annotation on the test itself will instruct Spock to run the test separately for each set of values defined. (ie: in the examples above, there are three rows in the table and three elements in the list, so Spock will produce three tests in either case).
 
 Even better, these "where" variables can be used in the test name, too! So this makes for very readable and intuitive test results. For example, this...
 ```groovy
@@ -108,12 +108,27 @@ def 'test using #env'() {
 - test using qa
 - test using prod
 
+#### Take advantage of "private" access!
+Another favorite quality-of-life ability that Spock offers is groovy's ability to disregard the "privacy" of variables and methods. This means that we no longer have to make a method public/package-private just so we can test it in isolation! With groovy, we can simply reference the method (or variable), and the framework will happily execute it without complaint.
+
+Another great use case for this is global private variables that are autowired via the `@Value("${some.prop}")` annotation. If we wanted to "mock" that value using pure JUnit, the options we had may not have been completely desireable:
+1. Load up a full spring context (so it gets autowired)
+    - This isn't always ideal because it can significantly slow down the runtime of the tests. If we don't need the full app context, then why should we have to pay the price of loading it?
+2. Add a setter method for the variable(s) for the test code to use
+    - This allows us to bypass the spring context-load, so that's a win. But it clutters the code with methods that aren't actually intended for "real" use.
+3. Import something like PowerMock
+    - A framework like PowerMock sits on top of the java/JUnit that allows for things like accessing private elements. It allows for the "real" code to stay nice and clean, but the tradeoff is it requires some extra know-how for writing tests, and it adds quite a bit of clutter to the test code.
+
+With Spock, we don't need to do anything extra or special! We just "get it for free" with how groovy naturally behaves. [ThingService](/src/main/java/com/heliopolis/p3x972/spock/springboot/demo/service/ThingService.java#L15-L16) has an example of an `@Value` annotation being tested by [ThingServiceSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L53-L67). And the [StuffService](/src/main/java/com/heliopolis/p3x972/spock/springboot/demo/service/StuffService.java#L28-L30) has a private "create" method that is being tested in isolation by the [StuffServiceSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/StuffServiceSpec.groovy#L15-L24).
+
+I will just note that "technically" this ability is logged as a "bug" by the folks behind groovy. (It has to do with the fact that groovy is made to behave like a runtime-compiled language, not a build-compiled one). So it's not recommend that "real" code takes advantage of this functionality - and because of that, IDE's like IntelliJ will try to discourage you from accessing private variables/methods. However, I just add the annotation `@SuppressWarnings('GroovyAccessibility')` to the top of each Specification class I write. That signals to the IDE that I am _purposefully_ taking advantage of exceeding privacy rights, and all the yellow squiggly lines go away! :)
+
 #### Advanced value-matching
 In the "given" or "then" blocks, some advanced matching on objects being passed as method variables can be performed! A tangible example is written in the "given" block of [this test](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy#L55-L77). It mocks the "add" method:
 - If the "Thing" object passed to the `add` method has a "name" value of "foobar", then throw an exception.
 - Otherwise, simply return a mocked "Thing" object.
 
-I recommend caution with using this. It's very powerful functionality, but it can also result in a test that's difficult to understand or maintain.
+I recommend caution with using this. It's very powerful functionality, but it can also result in a test that's difficult to understand or maintain. So be judicious about its use.
 
 #### Climbing the rest of the learning curve
 Practice, practice, practice! The learning curve is a bit steep with Spock -- especially if you're new to groovy syntax in general. However, it's one of those things that "once you get it, you get it". And you'll never want to write tests any other way again!
