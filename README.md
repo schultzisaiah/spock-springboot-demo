@@ -7,14 +7,14 @@ This project is a small demo of Spock tests on a Spring Boot app.
 This project demonstrates some of the more simple and most-commonly-used types of tests that I find myself writing from day to day.
 
 Some particular features highlighted in this demo:
-- Testing with/out mocks in a Controller/Service/Repo architecture
-- Testing with feature toggles ([Togglz](https://www.togglz.org/), in this case)
-- Multiple test cases in the same test function (ie: "where" table)
-- Mocking different types of responses based on different input
-- Behavior-driven testing (Spies)
+- Testing with feature toggles ([Togglz](https://www.togglz.org/), in this case) [↴](#feature-toggling)
+- Testing with/out mocks in a Controller/Service/Repo architecture [↴](#using-mockspy)
+- Behavior-driven testing (Spies) [↴](#using-mockspy)
     - counting invocation
     - validating call-order
-- Taking advantage of "private" access
+- Multiple test cases in the same test function (ie: "where" table and "Unroll") [↴](#unroll-test-iterations)
+- Taking advantage of "private" access [↴](#take-advantage-of-private-access)
+- Mocking different types of responses based on different input [↴](#advanced-value-matching)
 
 
 Run using:
@@ -32,7 +32,7 @@ The tests themselves are usually written using an explicit "given/when/then" str
 - BONUS SECTION! `where:` is used to define multiple testing scenarios to be executed by the same test code. See the "@Unroll" section below for more on that!
 
 #### Feature toggling
-I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework (Togglz) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
+I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework ([Togglz](https://www.togglz.org/)) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
 
 Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L109) and [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L111-L125).
 
