@@ -29,8 +29,3 @@ jobs:
       with:
         name: HTML Test Restuls
         path: build/reports/tests/test/
-    - name: Publish Unit Test Results (XML)
-      uses: EnricoMi/publish-unit-test-result-action@v1.3
-      with:
-        github_token: ${{ secrets.MY_TOKEN }}
-        files: build/test-results/**/*.xml
