@@ -70,20 +70,20 @@
 <h2>Failed tests</h2>
 <ul class="linkList">
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html">ThingControllerSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html#getThing() throws exception - FAILURE DEMO">getThing() throws exception - FAILURE DEMO</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md">ThingControllerSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md#getThing() throws exception - FAILURE DEMO">getThing() throws exception - FAILURE DEMO</a>
 </li>
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html">ThingControllerSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html#getThing(0) - FAILURE DEMO">getThing(0) - FAILURE DEMO</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md">ThingControllerSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md#getThing(0) - FAILURE DEMO">getThing(0) - FAILURE DEMO</a>
 </li>
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html">ThingControllerSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html#getThing(1) - FAILURE DEMO">getThing(1) - FAILURE DEMO</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md">ThingControllerSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md#getThing(1) - FAILURE DEMO">getThing(1) - FAILURE DEMO</a>
 </li>
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html">ThingControllerSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html#saveThing() - FAILURE DEMO - handling both happy-path and exception in the same test">saveThing() - FAILURE DEMO - handling both happy-path and exception in the same test</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md">ThingControllerSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md#saveThing() - FAILURE DEMO - handling both happy-path and exception in the same test">saveThing() - FAILURE DEMO - handling both happy-path and exception in the same test</a>
 </li>
 </ul>
 </div>
@@ -102,7 +102,7 @@
 </thread>
 <tr>
 <td class="failures">
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.html">ThingControllerSpec</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.controller.ThingControllerSpec.md">ThingControllerSpec</a>
 </td>
 <td>11</td>
 <td>4</td>

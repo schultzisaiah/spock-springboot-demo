@@ -13,7 +13,7 @@
 <h1>Class com.heliopolis.p3x972.spock.springboot.demo.service.ThingServiceSpec</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/com.heliopolis.p3x972.spock.springboot.demo.service.html">com.heliopolis.p3x972.spock.springboot.demo.service</a> &gt; ThingServiceSpec</div>
+<a href="../packages/com.heliopolis.p3x972.spock.springboot.demo.service.md">com.heliopolis.p3x972.spock.springboot.demo.service</a> &gt; ThingServiceSpec</div>
 <div id="summary">
 <table>
 <tr>

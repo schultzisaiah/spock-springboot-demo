@@ -70,16 +70,16 @@
 <h2>Failed tests</h2>
 <ul class="linkList">
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html">StuffServiceSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html#test create Stuff entity - FAILURE DEMO[0]">test create Stuff entity - FAILURE DEMO[0]</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md">StuffServiceSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md#test create Stuff entity - FAILURE DEMO[0]">test create Stuff entity - FAILURE DEMO[0]</a>
 </li>
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html">StuffServiceSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html#test create Stuff entity - FAILURE DEMO[1]">test create Stuff entity - FAILURE DEMO[1]</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md">StuffServiceSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md#test create Stuff entity - FAILURE DEMO[1]">test create Stuff entity - FAILURE DEMO[1]</a>
 </li>
 <li>
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html">StuffServiceSpec</a>.
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html#test create Stuff entity - FAILURE DEMO[2]">test create Stuff entity - FAILURE DEMO[2]</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md">StuffServiceSpec</a>.
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md#test create Stuff entity - FAILURE DEMO[2]">test create Stuff entity - FAILURE DEMO[2]</a>
 </li>
 </ul>
 </div>
@@ -98,7 +98,7 @@
 </thread>
 <tr>
 <td class="failures">
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.html">StuffServiceSpec</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.StuffServiceSpec.md">StuffServiceSpec</a>
 </td>
 <td>6</td>
 <td>3</td>
@@ -108,7 +108,7 @@
 </tr>
 <tr>
 <td class="success">
-<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.ThingServiceSpec.html">ThingServiceSpec</a>
+<a href="../classes/com.heliopolis.p3x972.spock.springboot.demo.service.ThingServiceSpec.md">ThingServiceSpec</a>
 </td>
 <td>10</td>
 <td>0</td>
