@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Test Summary</title>
-<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
-<link href="css/style.css" rel="stylesheet" type="text/css"/>
-<script src="js/report.js" type="text/javascript"></script>
-</head>
 <body>
 <div id="content">
 <h1>Test Summary</h1>
