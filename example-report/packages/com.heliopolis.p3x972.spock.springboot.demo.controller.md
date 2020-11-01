@@ -12,7 +12,7 @@
 <div id="content">
 <h1>Package com.heliopolis.p3x972.spock.springboot.demo.controller</h1>
 <div class="breadcrumbs">
-<a href="../index.html">all</a> &gt; com.heliopolis.p3x972.spock.springboot.demo.controller</div>
+<a href="../index.md">all</a> &gt; com.heliopolis.p3x972.spock.springboot.demo.controller</div>
 <div id="summary">
 <table>
 <tr>
