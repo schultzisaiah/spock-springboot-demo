@@ -22,4 +22,16 @@ class StuffServiceSpec extends BaseSpec {
         where:
         value << ['one', 'car', 'foobar']
     }
+
+    @Unroll
+    def 'test create Stuff entity - FAILURE DEMO'() {
+        when:
+        def result = service.createStuff(value + '!')
+
+        then:
+        result.value == value
+
+        where:
+        value << ['one', 'car', 'foobar']
+    }
 }

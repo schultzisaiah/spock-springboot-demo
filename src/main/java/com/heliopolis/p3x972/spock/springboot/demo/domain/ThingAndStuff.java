@@ -6,8 +6,10 @@ import com.heliopolis.p3x972.spock.springboot.demo.entity.Thing;
 import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
 @JsonInclude(Include.NON_EMPTY)
 @Data
 public class ThingAndStuff extends Thing {
