@@ -23,7 +23,7 @@ Run using:
 gradle wrapper test
 ```
 
-### Some more detailed commentary:
+## Some more detailed commentary:
 Spock refers to the classes to be run by JUnit as "Specifications" (aka "Spec's"). Public methods defined in these specs are the individual tests that will be picked up by the runner. No `@Test` annotations necessary to signal JUnit - instead, if you don't want the method to be executed by the test-runner, then make it a private method, and it will be ignored.
 
 The tests themselves are usually written using an explicit "given/when/then" structure. The actual execution lifecycle of these blocks within the Spock framework can be a little bit complicated (might be worth doing that research after you've taken some time to get on your feet with the basics), but conceptually it's like this:
@@ -32,12 +32,12 @@ The tests themselves are usually written using an explicit "given/when/then" str
 - `then:` is where the validations for the test results are performed. Each line of this block should be a boolean function. If the line evaluates to `true`, then that test detail passes. If `false`, then Spock marks the test as failed. 
 - BONUS SECTION! `where:` is used to define multiple testing scenarios to be executed by the same test code. See the "@Unroll" section below for more on that!
 
-#### Feature toggling
+### Feature toggling
 I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework ([Togglz](https://www.togglz.org/)) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
 
 Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L125).
 
-#### Using Mock/Spy
+### Using Mock/Spy
 Well done "pure" unit tests are very well mocked out so that only the method under test is code influencing the results of the test. This allows us to create concise tests that are easy to read and maintain, clearly indicate the offending code when tests fail, and run very very fast.
 
 The "mock everything" strategy is employed for the [ThingControllerSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy) tests.
@@ -65,7 +65,7 @@ then:
 1 * spyService.get(_)
 ```
 
-#### @Unroll test iterations
+### @Unroll test iterations
 One of my favorite quality-of-life features offered by Spock is the ability to define a test once, and "unroll" different scenarios using the same exact test.
 
 You can see this used throughout this demo code. Basically test variables can be defined in the "where" clause of the test one one of two ways...
@@ -109,7 +109,7 @@ def 'test using #env'() {
 - test using qa
 - test using prod
 
-#### Take advantage of "private" access!
+### Take advantage of "private" access!
 Another favorite quality-of-life ability that Spock offers is groovy's ability to disregard the "privacy" of variables and methods. This means that we no longer have to make a method public/package-private just so we can test it in isolation! With groovy, we can simply reference the method (or variable), and the framework will happily execute it without complaint.
 
 Another great use case for this is global private variables that are autowired via the `@Value("${some.prop}")` annotation. If we wanted to "mock" that value using pure JUnit, the options we had may not have been completely desireable:
@@ -124,19 +124,19 @@ With Spock, we don't need to do anything extra or special! We just "get it for f
 
 I will just note that "technically" this ability is logged as a "bug" by the folks behind groovy. (It has to do with the fact that groovy is made to behave like a runtime-compiled language, not a build-compiled one). So it's not recommend that "real" code takes advantage of this functionality - and because of that, IDE's like IntelliJ will try to discourage you from accessing private variables/methods. However, I just add the annotation `@SuppressWarnings('GroovyAccessibility')` to the top of each Specification class I write. That signals to the IDE that I am _purposefully_ taking advantage of exceeding privacy rights, and all the yellow squiggly lines go away! :)
 
-#### Advanced value-matching
+### Advanced value-matching
 In the "given" or "then" blocks, some advanced matching on objects being passed as method variables can be performed! A tangible example is written in the "given" block of [this test](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy#L55-L77). It mocks the "add" method:
 - If the "Thing" object passed to the `add` method has a "name" value of "foobar", then throw an exception.
 - Otherwise, simply return a mocked "Thing" object.
 
 I recommend caution with using this. It's very powerful functionality, but it can also result in a test that's difficult to understand or maintain. So be judicious about its use.
 
-#### Detailed failure descriptions
+### Detailed failure descriptions
 Also worth mentioning is the details that Spock provides in the test output when a test case fails. Out of the box, Spock will show the full context of the object(s) involved in the test case! This reduces the necessity to personally have to debug the test itself to take a peek into the state of objects in memeory at the time of failure. Spock will have already printed out what the object values were, and it results in a more actionable failure - which leads to resolving the failure quicker and easier!
 
 Check out the sample gradle test report that's been added to this repo in the [/example-report](/example-report/index.md) package. The report has a handful of sample failures in it that demo the experience.
 
-#### Climbing the rest of the learning curve
+## Climbing the rest of the learning curve
 Practice, practice, practice! The learning curve is a bit steep with Spock -- especially if you're new to groovy syntax in general. However, it's one of those things that "once you get it, you get it". And you'll never want to write tests any other way again!
 
 Lookup that [document I mentioned eariler](http://thejavatar.com/testing-with-spock/) to dig into any of these concepts deeper, or to learn some of the more complex features that Spock has to offer!
