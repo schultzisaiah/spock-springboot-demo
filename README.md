@@ -35,7 +35,7 @@ The tests themselves are usually written using an explicit "given/when/then" str
 #### Feature toggling
 I set us up for the standardized testing of feature toggles by creating the [BaseSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/BaseSpec.groovy) file as an abstract class all of our Specifications will extend. Here is defined the JUnit rule which will signal our feature toggle framework ([Togglz](https://www.togglz.org/)) to enable all feature toggles by default for each test. A helper method for easily enabling/disabling toggles is provided here as well.
 
-Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L109) and [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L111-L125).
+Using this to test feature toggle behavior can be found [here](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy#L98-L125).
 
 #### Using Mock/Spy
 Well done "pure" unit tests are very well mocked out so that only the method under test is code influencing the results of the test. This allows us to create concise tests that are easy to read and maintain, clearly indicate the offending code when tests fail, and run very very fast.
