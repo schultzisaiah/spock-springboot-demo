@@ -42,7 +42,7 @@ Well done "pure" unit tests are very well mocked out so that only the method und
 
 The "mock everything" strategy is employed for the [ThingControllerSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy) tests.
 
-However, using end-to-end real code (aka "integration" style tests) has its useful place as well. (Ideally, these should be run at a different time in the CI/CD pipeline because they are by nature slower than pure unit tests, however that is not the topic of this demo!) So the [ThingServiceSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingServiceSpec.groovy) was implemented using Spock "Spy" functionality. This instructs Spock to use a fully-implemented version of the class in question, however it also gives us the ability to validate things like:
+However, using end-to-end real code (aka "integration" style tests) has its useful place as well. (Ideally, these should be run at a different time in the CI/CD pipeline because they are by nature slower than pure unit tests, however that is not the topic of this demo!) So the [ThingServiceSpec](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/service/ThingServiceSpec.groovy) was implemented using Spock "Spy" functionality. This instructs Spock to use a fully-implemented version of the class in question, however it also gives us the ability to validate things like:
 
 Make sure the `get` method is invoked once:
 ```groovy
