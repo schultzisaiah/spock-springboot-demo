@@ -1,6 +1,6 @@
 # Spock Demo (with Spring Boot)
 
-This project is a small demo of Spock tests on a Spring Boot app.
+This project is a small demo of [Spock](http://spockframework.org/) tests on a Spring Boot app.
 
 [HERE](http://thejavatar.com/testing-with-spock/) is one of my favorite cheat-sheat resources on the internet that I still reference often. It does a great job of outlining pretty much everything that Spock is capable of.
 
