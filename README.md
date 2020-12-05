@@ -134,7 +134,7 @@ I recommend caution with using this. It's very powerful functionality, but it ca
 ### Detailed failure descriptions
 Also worth mentioning is the details that Spock provides in the test output when a test case fails. Out of the box, Spock will show the full context of the object(s) involved in the test case! This reduces the necessity to personally have to debug the test itself to take a peek into the state of objects in memeory at the time of failure. Spock will have already printed out what the object values were, and it results in a more actionable failure - which leads to resolving the failure quicker and easier!
 
-Check out the sample gradle test report that's been added to this repo in the [/example-report](/example-report/index.md) package. The report has a handful of sample failures in it that demo the experience.
+Check out the sample gradle test report that I have hosted here: [https://schultzisaiah.dev/hosted/sample-test-report/index.html](https://schultzisaiah.dev/hosted/sample-test-report/index.html). The report has a handful of sample failures in it that demo the experience.
 
 ## Climbing the rest of the learning curve
 Practice, practice, practice! The learning curve is a bit steep with Spock -- especially if you're new to groovy syntax in general. However, it's one of those things that "once you get it, you get it". And you'll never want to write tests any other way again!
