@@ -2,7 +2,7 @@
 
 This project is a small demo of [Spock](http://spockframework.org/) tests on a Spring Boot app.
 
-[HERE](https://gist.github.com/IsaiahSchultzTR/36c03606f53a4dfd5d543764bbd7fff7) is one of my favorite cheat-sheat resources on the internet that I still reference often. It does a great job of outlining pretty much everything that Spock is capable of.
+[HERE](https://gist.github.com/schultzisaiah/09dd8ac30dd43bdbfa77fe8fbae1da95) is one of my favorite cheat-sheat resources on the internet that I still reference often. It does a great job of outlining pretty much everything that Spock is capable of.
 
 This project demonstrates some of the more simple and most-commonly-used types of tests that I find myself writing from day to day.
 
