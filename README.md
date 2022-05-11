@@ -125,7 +125,7 @@ With Spock, we don't need to do anything extra or special! We just "get it for f
 I will just note that "technically" this ability is logged as a "bug" by the folks behind groovy. (It has to do with the fact that groovy is made to behave like a runtime-compiled language, not a build-compiled one). So it's not recommend that "real" code takes advantage of this functionality - and because of that, IDE's like IntelliJ will try to discourage you from accessing private variables/methods. However, I just add the annotation `@SuppressWarnings('GroovyAccessibility')` to the top of each Specification class I write. That signals to the IDE that I am _purposefully_ taking advantage of exceeding privacy rights, and all the yellow squiggly lines go away! :)
 
 ### Advanced value-matching
-In the "given" or "then" blocks, some advanced matching on objects being passed as method variables can be performed! A tangible example is written in the "given" block of [this test](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy#L55-L77). It mocks the "add" method:
+In the "given" or "then" blocks, some advanced matching on objects being passed as method variables can be performed! A tangible example is written in the "given" block of [this test](/src/test/groovy/com/heliopolis/p3x972/spock/springboot/demo/controller/ThingControllerSpec.groovy#L86-L108). It mocks the "add" method:
 - If the "Thing" object passed to the `add` method has a "name" value of "foobar", then throw an exception.
 - Otherwise, simply return a mocked "Thing" object.
 
